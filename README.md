@@ -1,7 +1,7 @@
 # Youtripcalculator
 Our project helps you calculate how much money you need to use on gas for a road trip.
 
-youtube link : https://www.youtube.com/watch?v=K2axC1cSNeY
+videolink : https://www.youtube.com/watch?v=K2axC1cSNeY
 
 About the project
 
