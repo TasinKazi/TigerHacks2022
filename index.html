@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>You Move</title>
+
+  <style>
+  * {margin:0;
+     padding:0;
+     box-sizing: border-box;}
+  th {padding: 15px;
+      border: 1px solid black;
+      border-radius: 20px;
+      background-color:white;}
+   tr {margin-top: 10px;}
+ #th1 {padding: 10px;
+       border: 1px solid black;
+       border-radius: 30px;
+       background-color:black;
+       font-family:Arial;}
+ header {position: fixed;
+         top:0;
+         left: 0;
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         transition: 0s;
+         padding: 40px 100px;
+         z-index:500;}
+ header ul{position: relative;
+           display: flex;
+	         justify-content: center;
+           align-items: center;}
+ header ul li {list-style: none;}
+ header ul li a {position: relative;
+		             margin: 0 15px;
+                 color: white;
+ 		             text-decoration: none;
+		             letter-spacing: 2px;
+ 		             font-weight: 500px;
+		             transition: 0.6s;}
+
+ header.sticky {padding: 40px 100px;
+                background: white;}               
+ header.sticky ul li a { color: black; }
+ header.sticky ul li a:hover { color: orange; }
+ a:hover {color: orange;
+          cursor: pointer;}
+  </style>
+
+  </head>
+
+  <body style="background-color:black; height:900px; font-family:Lucida Bright; min-height:100vh;">
+
+   <!--start of banner div-->
+   <div id="banner" style=" width:100%; height:920px;">
+        <img src="bg.png"; style="filter: brightness(60%); width:1912px; height:920px;">
+   	
+        <!-- beginning of navbar header-->
+        <header id="navbar">
+ 	<ul>
+            <li><a href="#calculator-direct">Calculator</a></li>
+            <li><a href="index.html">Home</a></li>
+	</ul>
+        </header>
+	<!-- end of navbar header-->
+	
+	<!--beginning of welcome div-->
+	<div id="welcome" style="color:white; top: 50%; left: 46%; position: absolute;">
+	<h1 style="text-align: center;">We help <br><b style ="color:red;">You Move</b></h1>
+	</div>
+	<!--end of welcome div-->
+
+   </div>
+   <!--end of banner div-->
+   
+   <!--start of content div-->
+   <center>
+   <div id="content" style="background-color:white; height:30%; width:100%; ">
+    <p id="calculator-direct" style="padding-top: 10px;">Calcualter Your trip here:<p>
+    <div id="calculator-skin" style="background-color:white ; border: 1px solid black; border-radius: 10px; width:350px; height: 300px;">
+      <form style=" padding-top: 50px;">
+        <label for= "number">Distance planned to travel(miles):</label>
+        <input type="number" id="distanceMiles"></input>
+        <br>
+        <label for= "number"> What is your car's Mpg:</label>
+        <input type="number" id="milesPerGal"></input>
+        <br>
+        <label for="number"> How many mins will your trip take:</label> 
+        <input type="number" id="time"></input>
+        <br>
+        <label>Where in the U.S.A do you live:</label>
+        <select name="location" id="locationSelect">
+  <option value="AL">Alabama</option>
+  <option value="AK">Alaska</option>
+  <option value="AZ">Arizona</option>
+  <option value="AR">Arkansas</option>
+  <option value="CA">California</option>
+  <option value="CO">Colorado</option>
+  <option value="CT">Connecticut</option>
+  <option value="DE">Delaware</option>
+  <option value="FL">Florida</option>
+  <option value="GA">Georgia</option>
+  <option value="HI">Hawaii</option>
+  <option value="ID">Idaho</option>
+  <option value="IL">Illinois</option>
+  <option value="IN">Indiana</option>
+  <option value="IA">Iowa</option>
+  <option value="KS">Kansas</option>
+  <option value="KY">Kentucky</option>
+  <option value="LA">Louisiana</option>
+  <option value="ME">Maine</option>
+  <option value="MD">Maryland</option>
+  <option value="MA">Massachusetts</option>
+  <option value="MI">Michigan</option>
+  <option value="MN">Minnesota</option>
+  <option value="MS">Mississippi</option>
+  <option value="MO">Missouri</option>
+  <option value="MT">Montana</option>
+  <option value="NE">Nebraska</option>
+  <option value="NV">Nevada</option>
+  <option value="NH">New Hampshire</option>
+  <option value="NJ">New Jersey</option>
+  <option value="NM">New Mexico</option>
+  <option value="NY">New York</option>
+  <option value="NC">North Carolina</option>
+  <option value="ND">North Dakota</option>
+  <option value="OH">Ohio</option>
+  <option value="OK">Oklahoma</option>
+  <option value="OR">Oregon</option>
+  <option value="PA">Pennsylvania</option>
+  <option value="RI">Rhode Island</option>
+  <option value="SC">South Carolina</option>
+  <option value="SD">South Dakota</option>
+  <option value="TN">Tennessee</option>
+  <option value="TX">Texas</option>
+  <option value="UT">Utah</option>
+  <option value="VT">Vermont</option>
+  <option value="VA">Virginia</option>
+  <option value="WA">Washington</option>
+  <option value="WV">West Virginia</option>
+  <option value="WI">Wisconsin</option>
+  <option value="WY">Wyoming</option>
+        </select>
+        <br>
+        <br>
+        <button onclick="calc()">Calculate</button>
+      </form>
+    </div>
+    <br>
+    <br>
+    <p style="border-bottom: 1px solid black; width:20%; padding-top: 5px;">What is this app?<p>
+       <b><p style=" width: 33%;" > (Enter Text Here)</p></b>
+    <br>    
+    <p style="border-bottom: 1px solid black; width:30%;"> Creators/Contributors<p>
+    <table>
+	<tr>
+   	<th><img src="default-pfp.png"; style="width:100px; height:100px; border: 1px solid black; border-radius: 30px;">
+            <br>Kazi Tasin</th>
+        <th><img src="default-pfp.png"; style="width:100px; height:100px; border: 1px solid black; border-radius: 30px;">
+            <br>Alondra<br></b>Conchas-Sanchez</th>
+        <th><img src="default-pfp.png"; style="width:100px; height:100px; border: 1px solid black; border-radius: 30px;">
+            <br>David Jacquet</th>
+	</tr>
+	</table>
+       
+	<p style="border-bottom: 1px solid black; width:30%;"> Shout out to: <p>
+	<table>
+	<tr>
+   	<th><img src="default-discord-pfp.jpg"; style="width:100px; height:100px; border: 1px solid black; border-radius: 30px;">
+	    <br>ios_andy[Panera]</th>
+	</tr>
+	</table>
+	<br>
+   </div>
+   </center>
+   <!--end of content div-->
+   <br>
+   
+  
+  <script type="text/javascript">
+  // create stinky nav bar  
+  window.addEventListener("scroll", function(){ var header = document.querySelector("header");
+  header.classList.toggle("sticky", window.scrollY > 0)})
+
+  
+      // calculations
+      let distanceMiles = parseInt(document.getElementById("distanceMiles").value);
+    let milesPerGal = parseInt(document.getElementById("milesPerGal").value);
+    let locationSelect = parseString(document.getElementById("locationSelect").value);
+    let time = parseInt(document.getElementById("time").value);
+    let gasVal;
+    let uberVal;
+    
+       //pass location price into gasVal
+    switch (locationSelect) { 
+      case 'AL':gasVal = 3.286;
+      break;
+      case 'AK': gasVal = 4.708;
+      break;
+      case 'AZ': gasVal = 4.234;
+      break;
+      case 'AR': gasVal = 3.224;
+      break;
+      case 'CA': gasVal = 5.393;
+      break;
+      case 'CO': gasVal = 3.437;
+      break;
+      case 'CT': gasVal = 3.712;
+      break;
+      case 'DE': gasVal = 3.849;
+      break;
+      case 'FL': gasVal = 3.418;
+      break;
+      case 'GA': gasVal = 3.089;
+      break;
+      case 'HI': gasVal = 5.116;
+      break;
+      case 'ID': gasVal = 4.256;
+      break;
+      case 'IL': gasVal = 4.299;
+      break;
+      case 'IN': gasVal = 4.186;
+      break;
+      case 'IA': gasVal = 3.556;
+      break;
+      case 'KS': gasVal = 3.352;
+      break;
+      case 'KY': gasVal = 3.516;
+      break;
+      case 'LA': gasVal = 3.229;
+      break;
+      case 'ME': gasVal = 3.920;
+      break;
+      case 'MD': gasVal = 3.736;
+      break;
+      case 'MA': gasVal = 3.799;
+      break;
+      case 'MI': gasVal = 4.209;
+      break;
+      case 'MN': gasVal = 3.603;
+      break;
+      case 'MS': gasVal = 3.177;
+      break;
+      case 'MO': gasVal = 3.377;
+      break;
+      case 'MT': gasVal = 3.865;
+      break;
+      case 'NE': gasVal = 3.456;
+      break;
+      case 'NV': gasVal = 4.909;
+      break;
+      case 'NH': gasVal = 3.743;
+      break;
+      case 'NJ': gasVal = 3.893;
+      break;
+      case 'NM': gasVal = 3.485;
+      break;
+      case 'NY': gasVal = 3.827;
+      break;
+      case 'NC': gasVal = 3.339;
+      break;
+      case 'ND': gasVal = 3.605;
+      break;
+      case 'OH': gasVal = 3.864;
+      break;
+      case 'OK': gasVal = 3.298;
+      break;
+      case 'OR': gasVal = 4.819;
+      break;
+      case 'PA': gasVal = 4.057;
+      break;
+      case 'RI': gasVal = 3.842
+      break;
+      case 'SC': gasVal = 3.221;
+      break;
+      case 'SD': gasVal = 3.597;
+      break;
+      case 'TN': gasVal = 3.265;
+      break;
+      case 'TX': gasVal = 3.151;
+      break;
+      case 'UT': gasVal = 4.058;
+      break;
+      case 'VT': gasVal = 3.946;
+      break;
+      case 'VA': gasVal = 3.484;
+      break;
+      case 'WA': gasVal = 4.760;
+      break;
+      case 'WV': gasVal = 3.581;
+      break;
+      case 'WI': gasVal = 3.851;
+      break;
+      case 'WY': gasVal = 3.621;
+      break;
+    }
+       
+       //calculate trip price for car
+       let galOfGas= distanceMiles/milesPerGal;
+       let tripVal = galOfGas * gasVal;
+       
+       //calcualte aprox uberX price
+       if ( time <= 1 ){
+        uberVal = 2 + (.22 * 1) + (1.55 * 1) + 1.55;
+       }
+        else {
+          uberVal = 2 + (.22 * time) + (1.55 * distanceMiles) + 1.55;
+        }
+        
+        function calc(){
+           alert('The estimated value for your car trip is '+ tripVal +' dollars.'); 
+           alert('The estimated value for your UberX trip is ' + uberVal +' dollars, plus or minus extra fees.');
+        }
+      
+  </script>
+  
+  </body>
+</html>
